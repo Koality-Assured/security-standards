@@ -11,7 +11,7 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
   [![Domains: 20+ Operational](https://img.shields.io/badge/domains-20%2B%20Operational-red.svg)](standards/)
   [![Threat Model: STRIDE-Aligned](https://img.shields.io/badge/threat%20model-STRIDE--Aligned-orange.svg)]()
-  [![Standards: 30 Normative](https://img.shields.io/badge/standards-30%20Normative-crimson.svg)](standards/)
+  [![Standards: 38 Normative](https://img.shields.io/badge/standards-38%20Normative-crimson.svg)](standards/)
   [![Architecture: Fail-Closed](https://img.shields.io/badge/architecture-Fail--Closed-red.svg)]()
 </div>
 
@@ -21,7 +21,7 @@
 
 **Koality-Assured Security Standards** provides an authoritative, machine-verifiable, and human-verifiable catalog of normative security policies, defensive architectures, and operational requirements. 
 
-Spanning **20+ operational security domains** and **30 normative standards**, this repository defines non-negotiable baselines designed for:
+Spanning **20+ operational security domains** and **38 normative standards**, this repository defines non-negotiable baselines designed for:
 1. **Engineering Teams**: Clear, deterministic implementation requirements for cloud infrastructure, application code, cryptography, and network perimeters.
 2. **Autonomous AI Coding Agents**: Machine-readable frontmatter and structured constraints that prevent privilege escalation, data leakage, insecure defaults, and prompt injection vulnerabilities.
 3. **Continuous Auditing & Compliance**: Strict automated integrity checks, schema validation, and alignment with NIST SP 800-53, OWASP ASVS, CIS Benchmarks, and the STRIDE threat model.
@@ -98,12 +98,13 @@ Each operational standard maps systematically to the **STRIDE** threat categoriz
 
 ## Normative Standards Catalog
 
-The complete catalog comprises 30 normative standards structured across 7 key operational domains.
+The complete catalog comprises 38 normative standards structured across 7 key operational domains.
 
 ### 1. Identity, Access & Credential Governance (IAM)
 
 | Standard Document | Purpose & Architectural Intent |
 | :--- | :--- |
+| [`zero-trust-architecture.md`](standards/zero-trust-architecture.md) | Least privilege access, continuous verification, identity federation, and micro-segmentation. |
 | [`identity-and-access.md`](standards/identity-and-access.md) | Centralized identity providers, mandatory SSO, phishing-resistant MFA, joiner–mover–leaver lifecycle via SCIM. |
 | [`privileged-access.md`](standards/privileged-access.md) | Just-In-Time (JIT) elevation, ephemeral permissions, Privileged Access Workstations (PAW), break-glass protocols. |
 | [`passwords-and-credentials.md`](standards/passwords-and-credentials.md) | Human credential entropy, enterprise password managers, non-human service secrets, rotation lifecycles. |
@@ -116,7 +117,10 @@ The complete catalog comprises 30 normative standards structured across 7 key op
 | Standard Document | Purpose & Architectural Intent |
 | :--- | :--- |
 | [`cloud-essentials.md`](standards/cloud-essentials.md) | Multi-account landing zone hierarchy, SCP organizational guardrails, public-access block, IAM identity center. |
+| [`hypervisor-security.md`](standards/hypervisor-security.md) | Virtualization host isolation, guest escaping prevention, and VM security posture. |
+| [`kubernetes-security.md`](standards/kubernetes-security.md) | Container orchestration security, RBAC enforcement, Pod Security Standards (PSS), and admission controllers. |
 | [`internet-facing-services.md`](standards/internet-facing-services.md) | Reverse proxy architecture, WAF inspection, DDoS mitigation, TLS 1.3 enforcement, public ingress filtering. |
+| [`web-application-firewall.md`](standards/web-application-firewall.md) | Layer 7 WAF policy configuration, OWASP Top 10 rule enforcement, and rate-limiting. |
 | [`administrative-interfaces.md`](standards/administrative-interfaces.md) | Hardening administrative control planes: private network isolation, dual-custody approval, audit trails. |
 | [`network-and-remote-access.md`](standards/network-and-remote-access.md) | Microsegmentation, Zero Trust Network Access (ZTNA), VPN elimination, DNS filtering, 802.1X network authentication. |
 | [`endpoint-and-workstation.md`](standards/endpoint-and-workstation.md) | Mandatory full-disk encryption (BitLocker/FileVault), screen lock timeouts, EDR/MDM fleet telemetry, BYOD controls. |
@@ -129,6 +133,7 @@ The complete catalog comprises 30 normative standards structured across 7 key op
 | [`ai-development-security.md`](standards/ai-development-security.md) | LLM and autonomous agent security, prompt injection defenses, tool sandboxing, human-in-the-loop gates. |
 | [`source-code-repository.md`](standards/source-code-repository.md) | Repository security baselines, branch protection, mandatory PR reviews, GPG signed commits, automated secret scanning. |
 | [`github-iac-security.md`](standards/github-iac-security.md) | GitHub as an Infrastructure-as-Code control plane, federated OIDC deployment tokens, workflow permission reduction. |
+| [`code-signing.md`](standards/code-signing.md) | Cryptographic code signing, provenance verification, and build pipeline integrity. |
 | [`secure-configuration.md`](standards/secure-configuration.md) | Hardened configuration baselines (CIS Benchmarks), immutable gold images, configuration drift detection. |
 | [`confluence-app-development-and-webhooks.md`](standards/confluence-app-development-and-webhooks.md) | Confluence app development, OAuth token handling, webhook signature validation, least-privilege API scopes. |
 | [`slack-app-development-and-webhooks.md`](standards/slack-app-development-and-webhooks.md) | Slack app integration, HMAC webhook signature verification, bot event boundaries, granular bot token scopes. |
@@ -154,6 +159,7 @@ The complete catalog comprises 30 normative standards structured across 7 key op
 | Standard Document | Purpose & Architectural Intent |
 | :--- | :--- |
 | [`third-party-and-supply-chain.md`](standards/third-party-and-supply-chain.md) | Vendor risk assessments, software bill of materials (SBOM), dependency provenance verification, exit strategies. |
+| [`open-source-software-security.md`](standards/open-source-software-security.md) | Third-party dependency hygiene, SCA tooling, license compliance, and malicious package detection. |
 
 ### 7. Governance, Empirical Grounding & Harness Architecture
 
@@ -163,6 +169,7 @@ The complete catalog comprises 30 normative standards structured across 7 key op
 | [`context-management.md`](standards/context-management.md) | 5-tier context loading hierarchy, prompt caching economics, token budget conservation for AI agent sessions. |
 | [`harness-template.md`](standards/harness-template.md) | Generic federated harness architecture, synchronization contracts with core templates, interface stability. |
 | [`wiki-harness-template.md`](standards/wiki-harness-template.md) | Wiki harness structural requirements, documentation schema enforcement, knowledge management baselines. |
+| [`repository-beautification.md`](standards/repository-beautification.md) | Ecosystem branding standards, vector SVG logos/banners, centered heroes, live badges, and package hardening. |
 | [`us-law-reference-use.md`](standards/us-law-reference-use.md) | Statutory and regulatory legal corpus citation standards, primary source legal routing requirements. |
 
 ---
@@ -221,3 +228,4 @@ When AI coding agents (such as Claude, Gemini, Antigravity, or Cursor) operate i
 
 - **License**: [MIT License](LICENSE) &copy; 2026 Koality-Assured.
 - **Security Notice**: All standards in this repository are subject to continuous automated integrity validation and security policy compliance. To report security vulnerabilities or misconfigurations, follow the responsible disclosure guidelines in our security advisory process.
+
